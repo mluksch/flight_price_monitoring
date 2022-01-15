@@ -1,0 +1,18 @@
+{
+  "version": "2.0",
+  "app_name": "flight-check",
+  "stages": {
+    "dev": {
+      "api_gateway_stage": "api",
+      "environment_variables": {
+        "KIWI_API_KEY": "test",
+        "SHEETY_ENDPOINT": "test",
+        "SHEETY_API_KEY": "test",
+        "MAIL_GUN_ENDPOINT": "test",
+        "MAIL_GUN_API_KEY": "test",
+        "MAIL_RECEIVER": "test",
+        "MAIL_SENDER": "test"
+      }
+    }
+  }
+}
