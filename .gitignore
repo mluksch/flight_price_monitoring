@@ -3,3 +3,4 @@
 .chalice/config.json
 .env
 .idea
+*.json

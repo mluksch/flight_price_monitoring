@@ -10,6 +10,7 @@ deploy = "chalice deploy --connection-timeout=120"
 [packages]
 requests = "*"
 chalice = "*"
+numpy = "*"
 
 [dev-packages]
 
