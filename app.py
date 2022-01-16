@@ -1,12 +1,13 @@
-from chalice import Chalice
+from chalice import Chalice, Cron
+
+import checker
 
 app = Chalice(app_name='flight-check')
 
 
-@app.route('/')
-def index():
-    return {'hello': 'world'}
-
+@app.schedule(Cron(0, 0, '*/3', '*', '?', '*'))
+def cron():
+    checker.check()
 
 # The view function above will return {"hello": "world"}
 # whenever you make an HTTP GET request to '/'.

@@ -24,12 +24,13 @@ def _format_dt(dt: datetime.datetime) -> str:
 
 
 class Flight:
-    def __init__(self, price, routes, utc_departure: str, utc_arrival: str, link: str):
+    def __init__(self, price, routes, utc_departure: str, utc_arrival: str, link: str, duration: float):
         self.price: float = float(price)
         self.routes: [(str, str)] = routes
         self.utc_departure = utc_departure
         self.utc_arrival = utc_arrival
         self.link = link
+        self.duration = duration / 60
 
 
 def search_for_flights(date_from: datetime.datetime, date_to: datetime.datetime, from_iata: str, to_iata: str):
@@ -54,4 +55,6 @@ def search_for_flights(date_from: datetime.datetime, date_to: datetime.datetime,
     # res.raise_for_status()
     flights = res.json().get("data")
     return [Flight(price=flight["price"], utc_arrival=flight["utc_arrival"], utc_departure=flight["utc_departure"],
-                   routes=flight["routes"], link=flight["deep_link"]) for flight in flights]
+                   routes=flight["routes"], link=flight["deep_link"], duration=flight["duration"]["total"]) for flight
+            in
+            flights]
