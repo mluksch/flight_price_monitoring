@@ -6,6 +6,7 @@
       "api_gateway_stage": "api",
       "environment_variables": {
         "KIWI_API_KEY": "test",
+        "KIWI_API_ENDPOINT": "test",
         "SHEETY_ENDPOINT": "test",
         "SHEETY_API_KEY": "test",
         "MAIL_GUN_ENDPOINT": "test",

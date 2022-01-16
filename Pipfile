@@ -3,6 +3,10 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 name = "pypi"
 
+[scripts]
+test = "pipenv run main.py"
+deploy = "chalice deploy --connection-timeout=120"
+
 [packages]
 requests = "*"
 chalice = "*"
